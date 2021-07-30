@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 <!-- Title -->
-<title>博客搭建历程 - wpf博客</title>
+<title>tags - wpf博客</title>
 
 <!-- Icon -->
 <link rel="icon" href="/one.JPG">
@@ -33,12 +33,14 @@
                 
 <nav class="navbar navbar-expand-lg">
     
-    <div class="navbar-brand">
+	<a class="navbar-brand" href="/">
+    
         <img class="user-avatar" src="/one.JPG" alt="头像">
         <div class="site-name gt-c-content-color-first">
-            
+            wpf博客
         </div>
-    </div>
+    
+	</a>
     <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
         <i class="gt-c-content-color-first" style="font-size: 18px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
@@ -52,6 +54,10 @@
             
                 <div class="nav-item">
                     <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/categories/" class="menu gt-a-link" target="_self">分类</a>
                 </div>
             
                 <div class="nav-item">
@@ -69,6 +75,7 @@
 			
 			<div class="nav-item" style="padding: 1.0625rem 1.25rem .6875rem 1.25rem;" id="dark-mode-toggle-button">
 			    <a href="javascript:applyCustomDarkModeSettings(toggleCustomDarkMode())" class="menu">
+				    					
 				    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="16" width="16">
 				        <path fill="currentColor" d="M256 56c110.549 0 200 89.468 200 200 0 110.549-89.468 200-200 200-110.549 0-200-89.468-200-200 0-110.549 89.468-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 96c-83.947 0-152 68.053-152 152s68.053 152 152 152V104z"></path>
 				    </svg>
@@ -89,43 +96,14 @@
         }
     }	
 </script>
-                <div class="post-container">
-    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
-        <article class="gt-post-content">
-            <h1 class="post-title">博客搭建历程</h1>
-            <div class="post-info">
-                <time class="post-time gt-c-content-color-first">
-                    · 2021-07-26 ·</time>
                 
-                    
-                
-            </div>
-            <hr>
-            <div class="post-content gt-c-content-color-first">
-                <p>17年从学校学习接触到了html、css、js，觉得非常有意思，自己尝试写过静态网页，之后从网站中认识到个人博客，一直想自己搭建个人博客，百度过很多教程发现域名什么的要钱立马放弃。</p>
-<p>19年闲来无事玩我的世界，找教程发现了Hexo，清新的网页模板让我非常喜欢，了解了之后由于时间问题慢慢淡忘了。</p>
-<p>21年在四月份开始深入了解搭建方式，暑假花了半天时间选定了好看的主题，至此搭建完毕，后续会了解相关知识，制作自己的Hexo静态模板。</p>
-<p>之后这个免费的博客将为我学习所用，我会将之前学习的相关资料迁移到github博客中，搭建一个移动的个人学习资料库。</p>
-
-            </div>
-        </article>
-    </div>
-    <br>
+<div class="tags-container">
     
-        <div class="next-prev-post">
-            
-            
-                <div class="next-post">
-                    <div class="next gt-c-content-color-first">
-                        下一篇：<a href="/2021/07/26/hello-world/" 
-                            class="post-title gt-a-link">Hello World</a>
-                    </div>
-                </div>
-            
-        </div>
-    
+        <a class="tag gt-c-content-color-first gt-a-link" 
+            href="/tags/c/">#c++</a>
     
 </div>
+
                 <div class="site-footer gt-c-content-color-first">
     <div class="footer-main">
         <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
@@ -133,12 +111,19 @@
         <span style="text-align: right; float: right;">Theme <a 
             href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
             href="https://hexo.io" target="_blank">Hexo</a></span>
-        <span style="text-align: left;">学习，让自己获取更多知识
+        <span style="text-align: left;">因为菜，所以更要学习
 </span>
     </div>
 </div>
 
             </div>
+			<div class="fab">
+			    <a aria_label="返回顶部" class="fab-btn" href="#" title="返回顶部">
+				    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" viewBox="0 0 320 512" height="25" width="25">
+					    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z">
+					    </path>
+					</svg>
+			    </a>
         </div>
     </body>
 </html>

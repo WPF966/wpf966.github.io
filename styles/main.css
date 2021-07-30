@@ -100,6 +100,29 @@ body {
   letter-spacing: 1.0382px;
   color: var(--text);
 }
+.fab {
+  position: fixed;
+  bottom: 3rem;
+  right: 1.5rem;
+  contain: layout;
+}
+.fab .fab-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  background-color: var(--fab);
+  display: block;
+  padding: 0.75rem;
+  box-shadow: 0 0.3rem 0.75rem rgb(48 55 4.4%);
+  border: none;
+  border-radius: 1rem;
+  line-height: 1;
+  color: var(--content-first);
+}
 button {
   outline: none !important;
 }
@@ -463,6 +486,7 @@ hr {
 }
 .post-container .post-detail .post-info .post-tag {
   padding: 8px;
+  color: var(--content-first);
 }
 .post-container .post-detail .post-toc {
   margin-bottom: 30px;
