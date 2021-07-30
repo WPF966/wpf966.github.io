@@ -378,7 +378,7 @@ hr {
 }
 .post-list-container .post-inner .post {
   margin: 30px;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 28px;
   display: flex;
   flex-direction: row;
