@@ -572,7 +572,7 @@ hr {
 }
 .gt-post-content a,
 .gt-post-content a code {
-  color: var(--accent-first) !important;
+  color: var(--content-first) !important;
   transition: all 0.3s;
 }
 .gt-post-content a:hover {
