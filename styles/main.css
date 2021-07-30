@@ -428,8 +428,8 @@ hr {
 }
 .post-list-container .post-inner .post .post-left .post-info .post-tag,
 .post-list-container .post-inner .post .post-left .post-info .post-category {
-  margin: 0 10px;
-  color: var(--accent-first);
+    margin: 0 10px;
+    color: var(--content-first);
 }
 .post-list-container .post-inner .post .post-left .post-info a {
   color: var(--accent-first);
