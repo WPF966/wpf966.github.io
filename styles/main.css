@@ -33,6 +33,10 @@
 .dark {
   color-scheme: dark;
 }
+.dark pre > code {
+  color: #abb2bf;
+  background: #282c34;
+}
 iframe {
   color-scheme: light;
 }
@@ -434,6 +438,10 @@ hr {
 .post-list-container .post-inner .post .post-left .post-info a {
   color: var(--accent-first);
 }
+.post-list-container .post-inner .post .post-left .post-info a:hover {
+  text-decoration: underline;
+  color: var(--accent-first);
+}
 .post-list-container .post-inner .post:hover {
   transform: scale(1.012);
 }
@@ -576,7 +584,8 @@ hr {
   transition: all 0.3s;
 }
 .gt-post-content a:hover {
-  text-decoration: underline !important;
+  text-decoration: underline;
+  color: var(--accent-first) !important;
 }
 .gt-post-content .post-toc + hr {
   margin-bottom: calc(1rem + 18px);
@@ -626,6 +635,9 @@ hr {
   border: 1px solid var(--border);
   padding: 0.6em 1em;
 }
+.gt-post-content table td .gutter {
+  border-bottom: 1px solid var(--content-first);
+}
 .gt-post-content ul,
 .gt-post-content ol {
   padding-left: 20px;
@@ -669,11 +681,10 @@ hr {
   font-size: 14px;
   font-family: 'Roboto Mono', Consolas, Menlo, Monaco, 'Source Code Pro', 'Courier New', monospace;
   padding: 1em;
-  border-radius: 5px;
+  border-radius: 8px;
   line-height: 1.375;
   position: relative;
   width: 100%;
-  overflow: scroll;
   display: block;
 }
 .gt-post-content p code,
