@@ -9,7 +9,7 @@
 <title>C++基础入门 - wpf博客</title>
 
 <!-- Icon -->
-<link rel="icon" href="/one.JPG">
+<link rel="icon" href="/images/headPortrait/one.JPG">
 
 <!-- Fonts -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
@@ -28,7 +28,6 @@
 <script src="/scripts/darkTheme.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-
 <script>hljs.highlightAll();</script>
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
@@ -39,7 +38,7 @@
     
 	<a class="navbar-brand" href="/">
     
-        <img class="user-avatar" src="/one.JPG" alt="头像">
+        <img class="user-avatar" src="/images/headPortrait/one.JPG" alt="头像">
         <div class="site-name gt-c-content-color-first">
             wpf博客
         </div>
@@ -111,6 +110,10 @@
 				</time>
                 
                     
+                        <a href="/tags/c/" class="post-tag">
+                            c++
+						</a>
+                    
                 
             </div>
             <hr>
@@ -123,12 +126,20 @@
 <li>运行程序</li>
 </ul>
 <h4 id="1-1-1-创建项目"><a href="#1-1-1-创建项目" class="headerlink" title="1.1.1 创建项目"></a>1.1.1 创建项目</h4><p>​    Visual Studio是我们用来编写C++程序的主要工具，我们先将它打开</p>
-<p><img src="assets/1541383178746.png" alt="1541383178746"></p>
-<p><img src="assets/1541384366413.png" alt="1541384366413"></p>
+<img src="/images/c++program/1541383178746.png" class="" title="“1541383178746.png”">
+
+
+
+<img src="/images/c++program/1541384366413.png" class="">
+
 <h4 id="1-1-2-创建文件"><a href="#1-1-2-创建文件" class="headerlink" title="1.1.2 创建文件"></a>1.1.2 创建文件</h4><p>右键源文件，选择添加-&gt;新建项</p>
-<p><img src="assets/1541383817248.png" alt="1541383817248"></p>
+<img src="/images/c++program/1541383817248.png" class="">
+
 <p>给C++文件起个名称，然后点击添加即可。</p>
-<p><img src="assets/1541384140042.png" alt="1541384140042"></p>
+<img src="/images/c++program/1541384140042.png" class="">
+
+
+
 <h4 id="1-1-3-编写代码"><a href="#1-1-3-编写代码" class="headerlink" title="1.1.3 编写代码"></a>1.1.3 编写代码</h4><pre><code class="c++">#include&lt;iostream&gt;
 using namespace std;
 
@@ -141,7 +152,20 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h4 id="1-1-4-运行程序"><a href="#1-1-4-运行程序" class="headerlink" title="1.1.4 运行程序"></a>1.1.4 运行程序</h4><p><img src="assets/1541384818688.png" alt="1541384818688"></p>
+<h4 id="1-1-4-运行程序"><a href="#1-1-4-运行程序" class="headerlink" title="1.1.4 运行程序"></a>1.1.4 运行程序</h4><img src="/images/c++program/1541384818688.png" class="">
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h3 id="1-2-注释"><a href="#1-2-注释" class="headerlink" title="1.2 注释"></a>1.2 注释</h3><p><strong>作用</strong>：在代码中加一些说明和解释，方便自己或其他程序员程序员阅读代码</p>
 <p><strong>两种格式</strong></p>
 <ol>
@@ -895,8 +919,9 @@ int main() &#123;
 </code></pre>
 <h3 id="2-6-字符串型"><a href="#2-6-字符串型" class="headerlink" title="2.6 字符串型"></a>2.6 字符串型</h3><p><strong>作用</strong>：用于表示一串字符</p>
 <p><strong>两种风格</strong></p>
-<ol>
-<li><p><strong>C风格字符串</strong>： <code>char 变量名[] = &quot;字符串值&quot;</code></p>
+<ul>
+<li><strong>C风格字符串</strong>： <code>char 变量名[] = &quot;字符串值&quot;</code></li>
+</ul>
 <p>示例：</p>
 <pre><code class="C++">int main() &#123;
 
@@ -908,13 +933,12 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-</li>
-</ol>
 <blockquote>
 <p>注意：C风格的字符串要用双引号括起来</p>
 </blockquote>
-<ol>
-<li><p><strong>C++风格字符串</strong>：  <code>string  变量名 = &quot;字符串值&quot;</code></p>
+<ul>
+<li><strong>C++风格字符串</strong>：  <code>string  变量名 = &quot;字符串值&quot;</code></li>
+</ul>
 <p>示例：</p>
 <pre><code class="C++">int main() &#123;
 
@@ -926,8 +950,6 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-</li>
-</ol>
 <blockquote>
 <p>注意：C++风格字符串，需要加入头文件==#include&lt;string&gt;==</p>
 </blockquote>
@@ -1479,7 +1501,8 @@ int main() &#123;
 </ul>
 <ol>
 <li><p>单行格式if语句：<code>if(条件)&#123; 条件满足执行的语句 &#125;</code></p>
-<p><img src="assets/clip_image002.png" alt="img"></p>
+<img src="/images/c++program/clip_image002.png" class="">
+
 <p>示例：</p>
 <pre><code class="C++">int main() &#123;
 
@@ -1512,7 +1535,10 @@ int main() &#123;
 <ol start="2">
 <li>多行格式if语句：<code>if(条件)&#123; 条件满足执行的语句 &#125;else&#123; 条件不满足执行的语句 &#125;;</code></li>
 </ol>
-<p><img src="assets/clip_image002-1541662519170.png" alt="img"></p>
+<img src="/images/c++program/clip_image002-1541662519170.png" class="">
+
+
+
 <p>示例：</p>
 <pre><code class="C++">int main() &#123;
 
@@ -1539,7 +1565,14 @@ int main() &#123;
 <ol start="3">
 <li>多条件的if语句：<code>if(条件1)&#123; 条件1满足执行的语句 &#125;else if(条件2)&#123;条件2满足执行的语句&#125;... else&#123; 都不满足执行的语句&#125;</code></li>
 </ol>
-<p><img src="assets/clip_image002-1541662566808.png" alt="img"></p>
+<img src="/images/c++program/clip_image002-1541662566808.png" class="">
+
+
+
+
+
+
+
 <p>示例：</p>
 <pre><code class="C++">    int main() &#123;
 
@@ -1623,7 +1656,7 @@ int main() &#123;
 &#125;
 </code></pre>
 <p><strong>练习案例：</strong> 三只小猪称体重</p>
-<p>有三只小猪ABC，请分别输入三只小猪的体重，并且判断哪只小猪最重？<img src="assets/%E4%B8%89%E5%8F%AA%E5%B0%8F%E7%8C%AA.jpg" alt="三只小猪"></p>
+<p>有三只小猪ABC，请分别输入三只小猪的体重，并且判断哪只小猪最重？<img src="/images/c++program/%E4%B8%89%E5%8F%AA%E5%B0%8F%E7%8C%AA.jpg" class=""></p>
 <h4 id="4-1-2-三目运算符"><a href="#4-1-2-三目运算符" class="headerlink" title="4.1.2 三目运算符"></a>4.1.2 三目运算符</h4><p><strong>作用：</strong> 通过三目运算符实现简单的判断</p>
 <p><strong>语法：</strong><code>表达式1 ? 表达式2 ：表达式3</code></p>
 <p><strong>解释：</strong></p>
@@ -1719,7 +1752,14 @@ int main() &#123;
 <h3 id="4-2-循环结构"><a href="#4-2-循环结构" class="headerlink" title="4.2 循环结构"></a>4.2 循环结构</h3><h4 id="4-2-1-while循环语句"><a href="#4-2-1-while循环语句" class="headerlink" title="4.2.1 while循环语句"></a>4.2.1 while循环语句</h4><p><strong>作用：</strong>满足循环条件，执行循环语句</p>
 <p><strong>语法：</strong><code> while(循环条件)&#123; 循环语句 &#125;</code></p>
 <p><strong>解释：</strong>==只要循环条件的结果为真，就执行循环语句==</p>
-<p><img src="assets/clip_image002-1541668640382.png" alt="img"></p>
+<img src="/images/c++program/clip_image002-1541668640382.png" class="">
+
+
+
+
+
+
+
 <p><strong>示例：</strong></p>
 <pre><code class="C++">int main() &#123;
 
@@ -1740,11 +1780,31 @@ int main() &#123;
 </blockquote>
 <p><strong>while循环练习案例：</strong>==猜数字==</p>
 <p><strong>案例描述：</strong>系统随机生成一个1到100之间的数字，玩家进行猜测，如果猜错，提示玩家数字过大或过小，如果猜对恭喜玩家胜利，并且退出游戏。</p>
-<p><img src="assets/%E7%8C%9C%E6%95%B0%E5%AD%97.jpg" alt="猜数字"></p>
+<img src="/images/c++program/%E7%8C%9C%E6%95%B0%E5%AD%97.jpg" class="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h4 id="4-2-2-do…while循环语句"><a href="#4-2-2-do…while循环语句" class="headerlink" title="4.2.2 do…while循环语句"></a>4.2.2 do…while循环语句</h4><p><strong>作用：</strong> 满足循环条件，执行循环语句</p>
 <p><strong>语法：</strong> <code>do&#123; 循环语句 &#125; while(循环条件);</code></p>
 <p><strong>注意：</strong>与while的区别在于==do…while会先执行一次循环语句==，再判断循环条件</p>
-<p><img src="assets/clip_image002-1541671163478.png" alt="img"></p>
+<img src="/images/c++program/clip_image002-1541671163478.png" class="">
+
+
+
 <p><strong>示例：</strong></p>
 <pre><code class="C++">int main() &#123;
 
@@ -1786,7 +1846,10 @@ int main() &#123;
 &#125;
 </code></pre>
 <p><strong>详解：</strong></p>
-<p><img src="assets/1541673704101.png" alt="1541673704101"></p>
+<img src="/images/c++program/1541673704101.png" class="">
+
+
+
 <blockquote>
 <p>注意：for循环中的表达式，要用分号进行分隔</p>
 </blockquote>
@@ -1795,10 +1858,34 @@ int main() &#123;
 </blockquote>
 <p><strong>练习案例：敲桌子</strong></p>
 <p>案例描述：从1开始数到数字100， 如果数字个位含有7，或者数字十位含有7，或者该数字是7的倍数，我们打印敲桌子，其余数字直接打印输出。</p>
-<p><img src="assets/timg.gif" alt="timg"></p>
+<img src="/images/c++program/timg.gif" class="">
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h4 id="4-2-4-嵌套循环"><a href="#4-2-4-嵌套循环" class="headerlink" title="4.2.4 嵌套循环"></a>4.2.4 嵌套循环</h4><p><strong>作用：</strong> 在循环体中再嵌套一层循环，解决一些实际问题</p>
 <p>例如我们想在屏幕中打印如下图片，就需要利用嵌套循环</p>
-<p><img src="assets/1541676003486.png" alt="1541676003486"></p>
+<img src="/images/c++program/1541676003486.png" class="">
+
+
+
+
+
+
+
+
+
+
+
 <p><strong>示例：</strong></p>
 <pre><code class="C++">int main() &#123;
 
@@ -1819,7 +1906,12 @@ int main() &#123;
 </code></pre>
 <p><strong>练习案例：</strong>乘法口诀表</p>
 <p>案例描述：利用嵌套循环，实现九九乘法表</p>
-<p><img src="assets/0006018857256120_b.jpg" alt="0006018857256120_b"></p>
+<img src="/images/c++program/0006018857256120_b.jpg" class="">
+
+
+
+
+
 <h3 id="4-3-跳转语句"><a href="#4-3-跳转语句" class="headerlink" title="4.3 跳转语句"></a>4.3 跳转语句</h3><h4 id="4-3-1-break语句"><a href="#4-3-1-break语句" class="headerlink" title="4.3.1 break语句"></a>4.3.1 break语句</h4><p><strong>作用:</strong> 用于跳出==选择结构==或者==循环结构==</p>
 <p>break使用的时机：</p>
 <ul>
@@ -1945,7 +2037,20 @@ int main() &#123;
 <h2 id="5-数组"><a href="#5-数组" class="headerlink" title="5 数组"></a>5 数组</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><p>所谓数组，就是一个集合，里面存放了相同类型的数据元素</p>
 <p><strong>特点1：</strong>数组中的每个==数据元素都是相同的数据类型==</p>
 <p><strong>特点2：</strong>数组是由==连续的内存==位置组成的</p>
-<p><img src="assets/1541748375356.png" alt="1541748375356"></p>
+<img src="/images/c++program/1541748375356.png" class="">
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h3 id="5-2-一维数组"><a href="#5-2-一维数组" class="headerlink" title="5.2 一维数组"></a>5.2 一维数组</h3><h4 id="5-2-1-一维数组定义方式"><a href="#5-2-1-一维数组定义方式" class="headerlink" title="5.2.1 一维数组定义方式"></a>5.2.1 一维数组定义方式</h4><p>一维数组定义的三种方式：</p>
 <ol>
 <li><code>数据类型  数组名[ 数组长度 ];</code></li>
@@ -2056,7 +2161,8 @@ int main() &#123;
 <li>对每一对相邻元素做同样的工作，执行完毕后，找到第一个最大值。</li>
 <li>重复以上的步骤，每次比较次数-1，直到不需要比较</li>
 </ol>
-<p><img src="assets/1541905327273.png" alt="1541905327273"></p>
+<img src="/images/c++program/1541905327273.png" class="">
+
 <p><strong>示例：</strong> 将数组 { 4,2,8,0,5,7,1,3,9 } 进行升序排序</p>
 <pre><code class="C++">int main() &#123;
 
@@ -2086,7 +2192,8 @@ int main() &#123;
 &#125;
 </code></pre>
 <h3 id="5-3-二维数组"><a href="#5-3-二维数组" class="headerlink" title="5.3 二维数组"></a>5.3 二维数组</h3><p>二维数组就是在一维数组上，多加一个维度。</p>
-<p><img src="assets/1541905559138.png" alt="1541905559138"></p>
+<img src="/images/c++program/1541905559138.png" class="">
+
 <h4 id="5-3-1-二维数组定义方式"><a href="#5-3-1-二维数组定义方式" class="headerlink" title="5.3.1 二维数组定义方式"></a>5.3.1 二维数组定义方式</h4><p>二维数组定义的四种方式：</p>
 <ol>
 <li><code>数据类型  数组名[ 行数 ][ 列数 ];</code></li>
@@ -3072,7 +3179,7 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+
             </div>
         </article>
     </div>
@@ -3082,18 +3189,11 @@ int main() &#123;
             
                 <div class="prev-post">
                     <div class="prev gt-c-content-color-first">
-                        上一篇：<a href="/2021/07/31/test/" 
-                            class="post-title gt-a-link">test</a>
+                        上一篇：<a href="/2021/08/07/C++%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" 
+                            class="post-title gt-a-link">C++核心编程</a>
                     </div>
                 </div>
             
-            
-                <div class="next-post">
-                    <div class="next gt-c-content-color-first">
-                        下一篇：<a href="/2021/07/26/hello-world/" 
-                            class="post-title gt-a-link">Hello World</a>
-                    </div>
-                </div>
             
         </div>
     
@@ -3113,12 +3213,19 @@ int main() &#123;
 
             </div>
 			<div class="fab">
+			    
+			    <a aria-label="文章目录" class="fab-btn" id="toc-btn" href="javascript:;" title="文章目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="list-ul" class="svg-inline--fa fa-list-ul fa-w-16" role="img" viewBox="0 0 512 512" height="25" width="25">
+                        <path fill="currentColor" d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path>
+                    </svg>
+                </a>
+				
 			    <a aria_label="返回顶部" class="fab-btn" href="#" title="返回顶部">
 				    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" viewBox="0 0 320 512" height="25" width="25">
 					    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z">
 					    </path>
 					</svg>
 			    </a>
-        </div>
+            </div>
     </body>
 </html>

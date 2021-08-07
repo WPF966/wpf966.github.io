@@ -404,11 +404,11 @@ hr {
 }
 .post-list-container .post-inner .post .post-left .sticky-top-flag {
   color: white;
-  padding: 3px 10px;
   font-size: 12px;
   border-radius: 3px;
-  margin-right: 10px;
   vertical-align: middle;
+  margin-left: 94%;
+  text-align: center;
 }
 .post-list-container .post-inner .post .post-left .post-title {
   font-size: 22px;
@@ -532,7 +532,8 @@ hr {
   display: table !important;
 }
 .post-container .post-detail .post-content h2,
-.post-container .post-detail .post-content h3 {
+.post-container .post-detail .post-content h3,
+.post-container .post-detail .post-content h4 {
   display: inline-block;
   color: var(--content-first) !important;
   position: relative !important;
