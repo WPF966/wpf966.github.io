@@ -416,7 +416,7 @@ hr {
   width: 55px;
   height: 16px;
 }
-.post-list-container .post-inner .post .post-left .post-left-first .post-title {
+.post-list-container .post-inner .post .post-left .post-title {
   font-size: 22px;
   font-weight: normal;
   vertical-align: middle;
@@ -748,6 +748,7 @@ hr {
   box-shadow: 0 0.3rem 0.75rem rgba(48, 55, 66, 0.15);
   border-radius: var(--border-radius);
   max-height: calc(91vh - 5rem);
+  opacity: 0.8;
 }
 @media (max-width: 999px) {
   .post-toc {
@@ -783,6 +784,7 @@ hr {
 }
 .post-toc .toc .toc-item {
   list-style: none;
+  opacity: 1;
 }
 .post-toc .toc .toc-item a {
   display: -ms-flexbox;
