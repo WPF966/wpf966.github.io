@@ -22,17 +22,13 @@
 <link rel="stylesheet" href="/styles/main.css">
 
 
-
 <link rel="stylesheet" href="/styles/vs2015.min.css">
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
 
 
 <!--js-->
 <script src="/scripts/darkTheme.js"></script>
-
 <script src="/scripts/highlight.min.js"></script>
-
 <script>hljs.highlightAll();</script>
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
@@ -105,6 +101,7 @@
     }	
 </script>
                 
+
 <div class="post-container">
     <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
         <article class="gt-post-content">
@@ -3271,7 +3268,7 @@ int main() &#123;
 <p>​                        //如果容器变短，则末尾超出容器长度的元素被删除。</p>
 </li>
 <li><p><code>resize(num, elem); </code>       //重新指定容器的长度为num，若容器变长，则以elem值填充新位置。</p>
-<pre><code>                                           //如果容器变短，则末尾超出容器长度的元素被删除。
+<pre><code>                                          ​                                                 如果容器变短，则末尾超出容器长度的元素被删除。
 </code></pre>
 </li>
 </ul>
@@ -6293,8 +6290,35 @@ int main() &#123;
         </article>
     </div>
     <br>
+<script>
+    function $(id){
+	    return document.getElementById(id);
+	};
+	
+    $('pre code').each(function(i, block) {
+        var lines = $(this).text().split('\n').length - 1;
+        var $numbering = $('<ul/>').addClass('pre-numbering');
+        $(this)
+          .addClass('has-numbering')
+          .parent()
+          .append($numbering);
+        for(i=1;i<=lines;i++){
+            $numbering.append($('<li/>').text(i));
+        }
+    });
+	
+	
+	
+</script>
     
         <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2021/08/25/Linux%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BAC++%E7%8E%AF%E5%A2%83/" 
+                            class="post-title gt-a-link">Linux系统配置C++环境</a>
+                    </div>
+                </div>
             
             
                 <div class="next-post">
@@ -6335,6 +6359,7 @@ int main() &#123;
 		})
 	})
 </script>
+
                 <div class="site-footer gt-c-content-color-first">
     <div class="footer-main">
         <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->

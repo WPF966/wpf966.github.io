@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>Linux系统配置C++环境 - wpf博客</title>
+
+<!-- Icon -->
+<link rel="icon" href="/images/headPortrait/one.JPG">
+
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+
+<link rel="stylesheet" href="/styles/vs2015.min.css">
+
+
+
+<!--js-->
+<script src="/scripts/darkTheme.js"></script>
+<script src="/scripts/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+    <meta name="generator" content="Hexo 5.4.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                
+<nav class="navbar navbar-expand-lg">
+    
+	<a class="navbar-brand" href="/">
+    
+        <img class="user-avatar" src="/images/headPortrait/one.JPG" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            wpf博客
+        </div>
+    
+	</a>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+	
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/categories/" class="menu gt-a-link" target="_self">分类</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/about/" class="menu gt-a-link" target="_self">关于</a>
+                </div>
+            
+			
+			<div class="nav-item" style="padding: 1.0625rem 1.25rem .6875rem 1.25rem;" id="dark-mode-toggle-button">
+			    <a href="javascript:applyCustomDarkModeSettings(toggleCustomDarkMode())" class="menu">
+				    					
+				    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="16" width="16">
+				        <path fill="currentColor" d="M256 56c110.549 0 200 89.468 200 200 0 110.549-89.468 200-200 200-110.549 0-200-89.468-200-200 0-110.549 89.468-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 96c-83.947 0-152 68.053-152 152s68.053 152 152 152V104z"></path>
+				    </svg>
+				</a>
+			</div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }	
+</script>
+                
+
+<div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">Linux系统配置C++环境</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2021-08-25 ·
+				</time>
+                
+                    
+                        <a href="/tags/c/" class="post-tag">
+                            c++
+						</a>
+                    
+                        <a href="/tags/Linux/" class="post-tag">
+                            Linux
+						</a>
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <h2 id="CentOS简介"><a href="#CentOS简介" class="headerlink" title="CentOS简介"></a>CentOS简介</h2><p>CentOS是免费的、开源的、可以重新分发的开源操作系统 [1] ，CentOS（Community Enterprise Operating System，中文意思是社区企业操作系统）是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Linux/27050">Linux</a>发行版之一。</p>
+<p>CentOS Linux发行版是一个稳定的，可预测的，可管理的和可复现的平台，源于[Red Hat Enterprise Linux](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Red">https://baike.baidu.com/item/Red</a> Hat Enterprise Linux/10770503)（RHEL）依照<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81/114160">开放源代码</a>（大部分是GPL开源协议 [2] ）规定释出的源码所编译而成。</p>
+<p>自2004年3月以来，CentOS Linux一直是社区驱动的开源项目，旨在与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/RHEL/2767838">RHEL</a>在功能上兼容。</p>
+<h2 id="CentOS安装"><a href="#CentOS安装" class="headerlink" title="CentOS安装"></a>CentOS安装</h2><p>以下开始在window系统环境下使用虚拟机安装Linux系统</p>
+<h3 id="预下载工具"><a href="#预下载工具" class="headerlink" title="预下载工具"></a>预下载工具</h3><p>CentOS 7(2009)：<a target="_blank" rel="noopener" href="https://www.centos.org/download/">https://www.centos.org/download/</a></p>
+<p>VMare Pro下载安装教程：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fuzongle/p/12760193.html">https://www.cnblogs.com/fuzongle/p/12760193.html</a></p>
+<h3 id="虚拟机操作"><a href="#虚拟机操作" class="headerlink" title="虚拟机操作"></a>虚拟机操作</h3><p>1、打开VMware选择新建虚拟就</p>
+<img src="/images/LinuxVM/1.png" class="">
+
+<p>2、典型安装与自定义安装</p>
+<p>典型安装：VMware会将主流的配置应用在虚拟机的操作系统上，对于新手来很友好。</p>
+<p>自定义安装：自定义安装可以针对性的把一些资源加强，把不需要的资源移除。避免资源的浪费。</p>
+<p>这里选择典型安装。</p>
+<img src="/images/LinuxVM/2.png" class="">
+
+<p>3、选择稍后安装操作系统</p>
+<img src="/images/LinuxVM/3.png" class="">
+
+<p>4、操作系统选择</p>
+<p>选择之后要安装的Linux系统，版本选择CentOS 7 64位</p>
+<img src="/images/LinuxVM/4.png" class="">
+
+<p>5、虚拟机命名与位置</p>
+<p>虚拟机名称可直接命名为CentOS 7 64位</p>
+<p>虚拟系统位置在可自行选择电脑硬盘容量充足的分盘位置存储</p>
+<p>教程演示选择的是在E盘的位置下，新建一个文件夹用来存储</p>
+<img src="/images/LinuxVM/5.png" class="">
+
+<p>6、指定磁盘容量</p>
+<p>磁盘容量默认20G，虚拟机不会直接占用20G容量，会在虚拟系统中有大量文件的时候才会占用更多容量</p>
+<p>默认勾选将虚拟磁盘拆分成多个文件，可以方便虚拟机使用存储设备拷贝复制</p>
+<img src="/images/LinuxVM/6.png" class="">
+
+<p>7、自定义硬件</p>
+<img src="/images/LinuxVM/601.png" class="">
+
+<p>修改新CD/DVD(IDE)连接方式，选择使用IOS映像文件，找到下载的CentOS系统文件</p>
+<p>网络适配器选择NAT模式</p>
+<ul>
+<li>NAT模式：就是虚拟机要联网得先通过宿主机才能和外面进行通信</li>
+<li>仅主机：虚拟机与宿主机直接连起来</li>
+</ul>
+<p>内存与处理器可根据自己需求调整，或者直接默认选项，设置完成后点击关闭。</p>
+<img src="/images/LinuxVM/606.png" class="">
+
+<p>最后确认，点击完成</p>
+<img src="/images/LinuxVM/7.png" class="">
+
+
+
+<h3 id="安装CentOS"><a href="#安装CentOS" class="headerlink" title="安装CentOS"></a>安装CentOS</h3><p>1、开启虚拟机</p>
+<img src="/images/LinuxVM/10.png" class="">
+
+<p>等待初始化加载，开启虚拟机后出现以下选项</p>
+<p>​    Install CentOS Linux 7                            安装CentOS 7</p>
+<p>​    Test this media &amp; install CentOS 7       测试安装文件并安装CentOS 7</p>
+<p>​    Troubleshooting                                      修复故障</p>
+<p>选择第一项，直接安装CentOS 7，回车，等待加载进入下个界面</p>
+<img src="/images/LinuxVM/11.png" class="">
+
+
+
+<p>2、选择语言</p>
+<p>这里选择中文简体，美式键盘，点击继续</p>
+<img src="/images/LinuxVM/22.png" class="">
+
+<p>3、系统安装分区</p>
+<p>下拉选择系统、安装位置，可以进行磁盘分区。</p>
+<img src="/images/LinuxVM/33.png" class="">
+
+<p>选择我要配置分区，点击完成</p>
+<img src="/images/LinuxVM/44.png" class="">
+
+<p>点击加号，选择挂载点进行分区配置,设置完成好点击完成</p>
+<p>/boot 200m</p>
+<p>/          10g</p>
+<p>swap  2048m</p>
+<img src="/images/LinuxVM/51.png" class="">
+
+<img src="/images/LinuxVM/55.png" class="">
+
+<p>弹出消息，点击接受更改</p>
+<img src="/images/LinuxVM/66.png" class="">
+
+<p>设置主机名与网卡信息，打开网络开关即可，设置完成后点击开始安装</p>
+<img src="/images/LinuxVM/77.png" class="">
+
+<p>安装完成后出现安装配置界面</p>
+<img src="/images/LinuxVM/88.png" class="">
+
+<p>点击用户设置、ROOT密码，设置密码（密码设置难度弱，点击两次完成就可以设置完成）</p>
+<img src="/images/LinuxVM/99.png" class="">
+
+
+
+<p>4、修改配置</p>
+<p>修改CentOS7的字符集</p>
+<pre><code class="shell">echo LANG=&quot;zh_GN.UTF-8&quot; &gt; /etc/locale.conf
+</code></pre>
+<p>启用网卡</p>
+<p>打开ens33网卡的配置文件/etc/sysconfig/network-scripts/ifcfg-ens33,修改NOBOOT参数为yes。</p>
+<pre><code class="shell">echo ONBOOT=&quot;yes&quot; &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-ens33
+</code></pre>
+<p>yum安装基础指令</p>
+<p>安装ifconfig命令示例：</p>
+<pre><code class="shell">#这里使用“provides”或者“whatprovides”开关用于找到某个包提供了某些功能或文件
+yum whatprovides ifconfig
+yum provides ifconfig
+</code></pre>
+<img src="/images/LinuxVM/100.png" class="">
+
+<p>根据信息安装net-tools包：</p>
+<pre><code class="shell">yum -y install net-tools
+</code></pre>
+<p>等待加载结束之后就可以使用ifconfig命令了 </p>
+<h2 id="C-程序的编译"><a href="#C-程序的编译" class="headerlink" title="C++程序的编译"></a>C++程序的编译</h2><p>在某些操作系统中，C和C++是同一个编译器，在CentOS中，C的编译器是gcc，C++的编译器是g++。</p>
+<h3 id="1、安装g-编译器"><a href="#1、安装g-编译器" class="headerlink" title="1、安装g++编译器"></a>1、安装g++编译器</h3><p>用root用户登录服务器，执行以下命令安装或升级gcc-c++编译器。</p>
+<pre><code class="shell">yum -y install gcc-c++
+</code></pre>
+<p>如果您的CentOS系统没有安装gcc-c++，以上命令就会安装最新版本的gcc-c++，如果已经安装了gcc-c++，就会更新到最新版本的gcc-c++，所以，以上命令不管执行多少次都没有问题。</p>
+<blockquote>
+<p>注释：安装gcc-c++的前提条件是服务器必须可以访问互联网。</p>
+</blockquote>
+<h3 id="2、编译c-程序"><a href="#2、编译c-程序" class="headerlink" title="2、编译c++程序"></a>2、编译c++程序</h3><p>编译C程序的命令是gcc，编译C++程序的命令是g++，g++命令和gcc命令的用法相同，把gcc改为g++就可以了，我们在学习C语言时编写的那些示例程序，基本上都可以用g++来编译。</p>
+<pre><code class="shell">g++ -o helloWorld helloWorld.cpp
+./helloWorld
+</code></pre>
+
+            </div>
+        </article>
+    </div>
+    <br>
+<script>
+    function $(id){
+	    return document.getElementById(id);
+	};
+	
+    $('pre code').each(function(i, block) {
+        var lines = $(this).text().split('\n').length - 1;
+        var $numbering = $('<ul/>').addClass('pre-numbering');
+        $(this)
+          .addClass('has-numbering')
+          .parent()
+          .append($numbering);
+        for(i=1;i<=lines;i++){
+            $numbering.append($('<li/>').text(i));
+        }
+    });
+	
+	
+	
+</script>
+    
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2021/08/25/vscode%E9%85%8D%E7%BD%AEC++%E7%8E%AF%E5%A2%83/" 
+                            class="post-title gt-a-link">VSCode搭建C++环境</a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2021/08/07/C++%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B/" 
+                            class="post-title gt-a-link">C++提高编程</a>
+                    </div>
+                </div>
+            
+        </div>
+    
+    
+	
+	<div class="post-toc" id="post-toc">
+	    <div class="toc-label">
+		    <div>目录</div>
+			<a href="javascript:;" id="post-toc-close">
+			    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" height="16" width="16">
+				<path d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" fill="currentColor"></path>
+				</svg>
+			</a>
+		</div>
+		    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS%E7%AE%80%E4%BB%8B"><span class="toc-text">CentOS简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS%E5%AE%89%E8%A3%85"><span class="toc-text">CentOS安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7"><span class="toc-text">预下载工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C"><span class="toc-text">虚拟机操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85CentOS"><span class="toc-text">安装CentOS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BC%96%E8%AF%91"><span class="toc-text">C++程序的编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AE%89%E8%A3%85g-%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-text">1、安装g++编译器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E7%BC%96%E8%AF%91c-%E7%A8%8B%E5%BA%8F"><span class="toc-text">2、编译c++程序</span></a></li></ol></li></ol>
+	</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+	    document.getElementById("toc-btn").onclick=function(){
+		    document.getElementById("post-toc").classList.add("active")
+		},
+		document.getElementById("post-toc-close").onclick=function(){
+		    document.getElementById("post-toc").classList.remove("active")
+		},
+		Array.from(document.getElementsByClassName("toc-link")).forEach(function(t){
+		    t.addEventListener("click",function(t){
+			    document.getElementById("post-toc").classList.remove("active")
+			})
+		})
+	})
+</script>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">因为菜，所以更要学习
+</span>
+    </div>
+</div>
+
+            </div>
+			<div class="fab">
+			    
+			    <a aria-label="文章目录" class="fab-btn" id="toc-btn" href="javascript:;" title="文章目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="list-ul" class="svg-inline--fa fa-list-ul fa-w-16" role="img" viewBox="0 0 512 512" height="20" width="20">
+                        <path fill="currentColor" d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path>
+                    </svg>
+                </a>
+				
+			    <a aria_label="返回顶部" class="fab-btn" href="#" title="返回顶部">
+				    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" viewBox="0 0 320 512" height="20" width="20">
+					    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z">
+					    </path>
+					</svg>
+			    </a>
+            </div>
+    </body>
+</html>

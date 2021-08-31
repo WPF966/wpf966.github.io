@@ -22,17 +22,13 @@
 <link rel="stylesheet" href="/styles/main.css">
 
 
-
 <link rel="stylesheet" href="/styles/vs2015.min.css">
 
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
 
 
 <!--js-->
 <script src="/scripts/darkTheme.js"></script>
-
 <script src="/scripts/highlight.min.js"></script>
-
 <script>hljs.highlightAll();</script>
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
@@ -105,6 +101,7 @@
     }	
 </script>
                 
+
 <div class="post-container">
     <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
         <article class="gt-post-content">
@@ -3760,6 +3757,26 @@ int main() &#123;
         </article>
     </div>
     <br>
+<script>
+    function $(id){
+	    return document.getElementById(id);
+	};
+	
+    $('pre code').each(function(i, block) {
+        var lines = $(this).text().split('\n').length - 1;
+        var $numbering = $('<ul/>').addClass('pre-numbering');
+        $(this)
+          .addClass('has-numbering')
+          .parent()
+          .append($numbering);
+        for(i=1;i<=lines;i++){
+            $numbering.append($('<li/>').text(i));
+        }
+    });
+	
+	
+	
+</script>
     
         <div class="next-prev-post">
             
@@ -3809,6 +3826,7 @@ int main() &#123;
 		})
 	})
 </script>
+
                 <div class="site-footer gt-c-content-color-first">
     <div class="footer-main">
         <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->

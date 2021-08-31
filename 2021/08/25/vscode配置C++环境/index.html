@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Title -->
-<title>页面暂未实现 - wpf博客</title>
+<title>VSCode搭建C++环境 - wpf博客</title>
 
 <!-- Icon -->
 <link rel="icon" href="/images/headPortrait/one.JPG">
@@ -105,16 +105,26 @@
 <div class="post-container">
     <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
         <article class="gt-post-content">
-            <h1 class="post-title">页面暂未实现</h1>
+            <h1 class="post-title">VSCode搭建C++环境</h1>
             <div class="post-info">
                 <time class="post-time gt-c-content-color-first">
-                    · 2021-07-30 ·
+                    · 2021-08-25 ·
 				</time>
+                
+                    
+                        <a href="/tags/c/" class="post-tag">
+                            c++
+						</a>
+                    
                 
             </div>
             <hr>
             <div class="post-content gt-c-content-color-first">
-                
+                <h2 id="VSCode简介"><a href="#VSCode简介" class="headerlink" title="VSCode简介"></a>VSCode简介</h2><p>VSCode是一款微软出的轻量级编辑器，它本身只是一款文本编辑器而已，所有的功能都是以插件扩展的形式所存在，想用什么功能就安装对应的扩展即可，非常方便，同时也支持非常多的主题和图标，外观比较好看，重要的是VSCode支持各大主流操作系统，包括Windows、Linux和Mac OS。所以就选择它作为自己的一款主要的编辑器来使用。</p>
+<h3 id="一、下载"><a href="#一、下载" class="headerlink" title="一、下载"></a>一、下载</h3><p>VSCode下载地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>首先，我们通过上方网址访问VSCode官网下载对应操作系统版本的安装包即可。</p>
+<p>因为我使用的是64位的Windows，所以下载的是64位的exe文件。此处需要注意一下，现在官网上给出了User Installer和System Installer两个安装版本，分别叫用户和系统级别的安装版本，参考官网给出的解释，区别在于安装User Installer版本不需要管理员权限，安装的位置是在用户的本地AppData目录，而System Installer的安装是需要管理员权限的，是安装在Program Files目录下的。在官网首页处点击方框的下载按钮，默认下载的是User Installer版本。如果想要下载System版本的，可以点击右上角Download按钮，进而选择自己想要下载的版本。此处笔者下载的是System Installer版本。</p>
+
             </div>
         </article>
     </div>
@@ -140,6 +150,18 @@
 	
 </script>
     
+        <div class="next-prev-post">
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2021/08/25/Linux%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BAC++%E7%8E%AF%E5%A2%83/" 
+                            class="post-title gt-a-link">Linux系统配置C++环境</a>
+                    </div>
+                </div>
+            
+        </div>
+    
     
 	
 	<div class="post-toc" id="post-toc">
@@ -151,7 +173,7 @@
 				</svg>
 			</a>
 		</div>
-		    
+		    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VSCode%E7%AE%80%E4%BB%8B"><span class="toc-text">VSCode简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BD"><span class="toc-text">一、下载</span></a></li></ol></li></ol>
 	</div>
 </div>
 <script>
@@ -185,6 +207,12 @@
             </div>
 			<div class="fab">
 			    
+			    <a aria-label="文章目录" class="fab-btn" id="toc-btn" href="javascript:;" title="文章目录">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="list-ul" class="svg-inline--fa fa-list-ul fa-w-16" role="img" viewBox="0 0 512 512" height="20" width="20">
+                        <path fill="currentColor" d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path>
+                    </svg>
+                </a>
+				
 			    <a aria_label="返回顶部" class="fab-btn" href="#" title="返回顶部">
 				    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" viewBox="0 0 320 512" height="20" width="20">
 					    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z">
