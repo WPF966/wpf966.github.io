@@ -9,7 +9,7 @@
 <title>C++基础入门 - wpf博客</title>
 
 <!-- Icon -->
-<link rel="icon" href="/images/headPortrait/one.JPG">
+<link rel="icon" href="/images/htmlimg/one.JPG">
 
 <!-- Fonts -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
@@ -32,21 +32,16 @@
 <script>hljs.highlightAll();</script>
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
-        <div class="main gt-bg-theme-color-first">
-            <div class="main-content">
+        <div class="container">
                 
-<nav class="navbar navbar-expand-lg">
+<header class="navbar navbar-expand-lg">
     
 	<a class="navbar-brand" href="/">
-    
-        <img class="user-avatar" src="/images/headPortrait/one.JPG" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            wpf博客
-        </div>
-    
+        <img class="site-logo" src="/images/htmlimg/one.JPG" alt="头像">
+        <div class="site-name">wpf博客</div>
 	</a>
     <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
-        <i class="gt-c-content-color-first" style="font-size: 18px;">
+        <i class="gt-c-content-color-first" style="font-size: 18px; color: var(--content-first)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
                 <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
             </svg>
@@ -54,40 +49,31 @@
     </button>
 	
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center; ">
+        <div class="navbar-nav">
             
                 <div class="nav-item">
-                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                    <a href="/" class="menu" target="_self">首页</a>
                 </div>
             
                 <div class="nav-item">
-                    <a href="/categories/" class="menu gt-a-link" target="_self">分类</a>
+                    <a href="/categories/" class="menu" target="_self">分类</a>
                 </div>
             
                 <div class="nav-item">
-                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                    <a href="/tags/" class="menu" target="_self">标签</a>
                 </div>
             
                 <div class="nav-item">
-                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                    <a href="/archives/" class="menu" target="_self">归档</a>
                 </div>
             
                 <div class="nav-item">
-                    <a href="/about/" class="menu gt-a-link" target="_self">关于</a>
+                    <a href="/about/" class="menu" target="_self">关于</a>
                 </div>
             
-			
-			<div class="nav-item" style="padding: 1.0625rem 1.25rem .6875rem 1.25rem;" id="dark-mode-toggle-button">
-			    <a href="javascript:applyCustomDarkModeSettings(toggleCustomDarkMode())" class="menu">
-				    					
-				    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="16" width="16">
-				        <path fill="currentColor" d="M256 56c110.549 0 200 89.468 200 200 0 110.549-89.468 200-200 200-110.549 0-200-89.468-200-200 0-110.549 89.468-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 96c-83.947 0-152 68.053-152 152s68.053 152 152 152V104z"></path>
-				    </svg>
-				</a>
-			</div>
         </div>
     </div>
-</nav>
+</header>
 
 <script>
     /* 移动端导航栏展开/收起切换 */
@@ -100,27 +86,44 @@
         }
     }	
 </script>
-                
+                <main>
 
-<div class="post-container">
-    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
-        <article class="gt-post-content">
-            <h1 class="post-title">C++基础入门</h1>
-            <div class="post-info">
-                <time class="post-time gt-c-content-color-first">
-                    · 2021-07-30 ·
-				</time>
+<link rel="stylesheet" href="/styles/post.css">
+
+<div class="post card">
+    <div class="post-container">
+        <h1 class="post-title" id="post-title">C++基础入门</h1>
+			
+	    <div class="post-meta" id="post-info">
+			
+			<div class="post-meta-left">
+				<time class="post-time gt-c-content-color-first">2021-07-30</time>
+				<div class="post-categories">
+				
+									    
+					
+					<i class="dot"></i>
+                    <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-catrgory">编程语言</a>
+					
+                    				    
+				    <i class="dot"></i>					
+								
+				</div>
+				<div class="post-wordcount"></div>
+			</div>
+				
+			<div class="post-meta-right post-tags">
+				
                 
-                    
-                        <a href="/tags/c/" class="post-tag">
-                            c++
-						</a>
-                    
+                    <a href="/tags/c/" class="post-tag">#c++</a>
                 
-            </div>
-            <hr>
-            <div class="post-content gt-c-content-color-first">
-                <h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1 C++初识"></a>1 C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1  第一个C++程序"></a>1.1  第一个C++程序</h3><p>编写一个C++程序总共分为4个步骤</p>
+                
+			</div>
+				
+		</div>
+			
+		<div class="content" id="post-content">
+            <h2 id="1-C-初识"><a href="#1-C-初识" class="headerlink" title="1 C++初识"></a>1 C++初识</h2><h3 id="1-1-第一个C-程序"><a href="#1-1-第一个C-程序" class="headerlink" title="1.1  第一个C++程序"></a>1.1  第一个C++程序</h3><p>编写一个C++程序总共分为4个步骤</p>
 <ul>
 <li>创建项目</li>
 <li>创建文件</li>
@@ -1502,7 +1505,8 @@ int main() &#123;
 </li>
 </ul>
 <ol>
-<li><p>单行格式if语句：<code>if(条件)&#123; 条件满足执行的语句 &#125;</code></p>
+<li>单行格式if语句：<code>if(条件)&#123; 条件满足执行的语句 &#125;;</code></li>
+</ol>
 <img src="/images/c++program/clip_image002.png" class="">
 
 <p>示例：</p>
@@ -1529,8 +1533,6 @@ int main() &#123;
     return 0;
 &#125;
 </code></pre>
-</li>
-</ol>
 <blockquote>
 <p>注意：if条件表达式后不要加分号</p>
 </blockquote>
@@ -3182,30 +3184,10 @@ int main() &#123;
 &#125;
 </code></pre>
 
-            </div>
-        </article>
+        </div>			
     </div>
-    <br>
-<script>
-    function $(id){
-	    return document.getElementById(id);
-	};
-	
-    $('pre code').each(function(i, block) {
-        var lines = $(this).text().split('\n').length - 1;
-        var $numbering = $('<ul/>').addClass('pre-numbering');
-        $(this)
-          .addClass('has-numbering')
-          .parent()
-          .append($numbering);
-        for(i=1;i<=lines;i++){
-            $numbering.append($('<li/>').text(i));
-        }
-    });
-	
-	
-	
-</script>
+</div>
+
     
         <div class="next-prev-post">
             
@@ -3219,8 +3201,8 @@ int main() &#123;
             
         </div>
     
+    	
     
-	
 	<div class="post-toc" id="post-toc">
 	    <div class="toc-label">
 		    <div>目录</div>
@@ -3232,7 +3214,6 @@ int main() &#123;
 		</div>
 		    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-C-%E5%88%9D%E8%AF%86"><span class="toc-text">1 C++初识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%AC%AC%E4%B8%80%E4%B8%AAC-%E7%A8%8B%E5%BA%8F"><span class="toc-text">1.1  第一个C++程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-text">1.1.1 创建项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">1.1.2 创建文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81"><span class="toc-text">1.1.3 编写代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-text">1.1.4 运行程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%B3%A8%E9%87%8A"><span class="toc-text">1.2 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%8F%98%E9%87%8F"><span class="toc-text">1.3 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%B8%B8%E9%87%8F"><span class="toc-text">1.4  常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">1.5 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-text">1.6 标识符命名规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%95%B4%E5%9E%8B"><span class="toc-text">2.1 整型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-sizeof%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">2.2 sizeof关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AE%9E%E5%9E%8B%EF%BC%88%E6%B5%AE%E7%82%B9%E5%9E%8B%EF%BC%89"><span class="toc-text">2.3 实型（浮点型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="toc-text">2.4 字符型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-text">2.5 转义字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9E%8B"><span class="toc-text">2.6 字符串型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B-bool"><span class="toc-text">2.7 布尔类型 bool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BE%93%E5%85%A5"><span class="toc-text">2.8 数据的输入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3 运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.1 算术运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.2 赋值运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.3 比较运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.4 逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E7%BB%93%E6%9E%84"><span class="toc-text">4 程序流程结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84"><span class="toc-text">4.1 选择结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-if%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.1.1 if语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">4.1.2 三目运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-switch%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.1.3 switch语句</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">4.2 循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-while%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.2.1 while循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-2-do%E2%80%A6while%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.2.2 do…while循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-3-for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.2.3 for循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-4-%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF"><span class="toc-text">4.2.4 嵌套循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E8%B7%B3%E8%BD%AC%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3 跳转语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-break%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3.1 break语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-continue%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3.2 continue语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-3-goto%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3.3 goto语句</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E7%BB%84"><span class="toc-text">5 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%A6%82%E8%BF%B0"><span class="toc-text">5.1 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">5.2 一维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F"><span class="toc-text">5.2.1 一维数组定义方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E6%95%B0%E7%BB%84%E5%90%8D"><span class="toc-text">5.2.2 一维数组数组名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-3-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="toc-text">5.2.3 冒泡排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">5.3 二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89%E6%96%B9%E5%BC%8F"><span class="toc-text">5.3.1 二维数组定义方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%95%B0%E7%BB%84%E5%90%8D"><span class="toc-text">5.3.2 二维数组数组名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">5.3.3 二维数组应用案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%87%BD%E6%95%B0"><span class="toc-text">6 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E6%A6%82%E8%BF%B0"><span class="toc-text">6.1 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">6.2 函数的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="toc-text">6.3 函数的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%80%BC%E4%BC%A0%E9%80%92"><span class="toc-text">6.4 值传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E5%87%BD%E6%95%B0%E7%9A%84%E5%B8%B8%E8%A7%81%E6%A0%B7%E5%BC%8F"><span class="toc-text">6.5 函数的常见样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-text">6.6 函数的声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99"><span class="toc-text">6.7 函数的分文件编写</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%8C%87%E9%92%88"><span class="toc-text">7 指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E6%8C%87%E9%92%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">7.1 指针的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">7.2 指针变量的定义和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E6%8C%87%E9%92%88%E6%89%80%E5%8D%A0%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4"><span class="toc-text">7.3 指针所占内存空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E7%A9%BA%E6%8C%87%E9%92%88%E5%92%8C%E9%87%8E%E6%8C%87%E9%92%88"><span class="toc-text">7.4 空指针和野指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="toc-text">7.5 const修饰指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-text">7.6 指针和数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-7-%E6%8C%87%E9%92%88%E5%92%8C%E5%87%BD%E6%95%B0"><span class="toc-text">7.7 指针和函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-8-%E6%8C%87%E9%92%88%E3%80%81%E6%95%B0%E7%BB%84%E3%80%81%E5%87%BD%E6%95%B0"><span class="toc-text">7.8 指针、数组、函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">8 结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E7%BB%93%E6%9E%84%E4%BD%93%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">8.1 结构体基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">8.2 结构体定义和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84"><span class="toc-text">8.3 结构体数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="toc-text">8.4 结构体指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-%E7%BB%93%E6%9E%84%E4%BD%93%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">8.5 结构体嵌套结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-%E7%BB%93%E6%9E%84%E4%BD%93%E5%81%9A%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-text">8.6 结构体做函数参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-7-%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD-const%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">8.7 结构体中 const使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-8-%E7%BB%93%E6%9E%84%E4%BD%93%E6%A1%88%E4%BE%8B"><span class="toc-text">8.8 结构体案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-1-%E6%A1%88%E4%BE%8B1"><span class="toc-text">8.8.1 案例1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-8-2-%E6%A1%88%E4%BE%8B2"><span class="toc-text">8.8.2 案例2</span></a></li></ol></li></ol></li></ol>
 	</div>
-</div>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
 	    document.getElementById("toc-btn").onclick=function(){
@@ -3248,33 +3229,35 @@ int main() &#123;
 		})
 	})
 </script>
+</main>
+                <footer class="footer">
+    <div>
+	    因为菜，所以更要学习。
 
-                <div class="site-footer gt-c-content-color-first">
-    <div class="footer-main">
-        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
-        <!-- 文件位置：layout/_includes/footer.ejs -->
-        <span style="text-align: right; float: right;">Theme <a 
-            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
-            href="https://hexo.io" target="_blank">Hexo</a></span>
-        <span style="text-align: left;">因为菜，所以更要学习
-</span>
-    </div>
-</div>
-
-            </div>
+	</div>
+	<div>
+	    Theme 
+		<a href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by 
+		<a href="https://hexo.io" target="_blank">Hexo</a>
+	</div>
+</footer>
 			<div class="fab">
 			    
 			    <a aria-label="文章目录" class="fab-btn" id="toc-btn" href="javascript:;" title="文章目录">
-                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-icon="list-ul" class="svg-inline--fa fa-list-ul fa-w-16" role="img" viewBox="0 0 512 512" height="20" width="20">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512" aria-hidden="true" focusable="false" data-icon="list-ul" class="svg-inline--fa fa-list-ul fa-w-16" role="img">
                         <path fill="currentColor" d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path>
                     </svg>
                 </a>
-				
+								
+				<a aria-label="深色模式" class="fab-btn" id="dark-mode-toggle-button" href="javascript:applyCustomDarkModeSettings(toggleCustomDarkMode())" title="深色模式">
+				    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+				        <path fill="currentColor" d="M256 56c110.549 0 200 89.468 200 200 0 110.549-89.468 200-200 200-110.549 0-200-89.468-200-200 0-110.549 89.468-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 96c-83.947 0-152 68.053-152 152s68.053 152 152 152V104z"></path>
+				    </svg>
+				</a>				
 			    <a aria_label="返回顶部" class="fab-btn" href="#" title="返回顶部">
-				    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img" viewBox="0 0 320 512" height="20" width="20">
-					    <path fill="currentColor" d="M168.5 164.2l148 146.8c4.7 4.7 4.7 12.3 0 17l-19.8 19.8c-4.7 4.7-12.3 4.7-17 0L160 229.3 40.3 347.8c-4.7 4.7-12.3 4.7-17 0L3.5 328c-4.7-4.7-4.7-12.3 0-17l148-146.8c4.7-4.7 12.3-4.7 17 0z">
-					    </path>
-					</svg>
+			        <svg class="icon" width="20px" height="20.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M76.8 480l422.4-422.4c6.4-6.4 19.2-6.4 25.6 0l422.4 422.4c6.4 6.4 12.8 6.4 19.2 6.4 6.4 0 12.8 0 19.2-6.4 12.8-12.8 12.8-25.6 0-38.4L556.8 19.2c-25.6-25.6-76.8-25.6-102.4 0L32 441.6C25.6 448 25.6 467.2 32 480S64 492.8 76.8 480zM32 672 140.8 672 140.8 1017.6 192 1017.6 192 672 300.8 672 300.8 633.6 32 633.6ZM499.2 627.2c-57.6 0-102.4 19.2-134.4 57.6-32 38.4-51.2 89.6-51.2 147.2 0 57.6 19.2 102.4 51.2 140.8C396.8 1004.8 441.6 1024 492.8 1024c57.6 0 102.4-19.2 134.4-57.6s51.2-89.6 51.2-147.2c0-57.6-19.2-102.4-51.2-140.8C601.6 640 556.8 627.2 499.2 627.2zM595.2 940.8c-25.6 25.6-57.6 38.4-96 38.4-38.4 0-70.4-12.8-96-44.8-25.6-25.6-38.4-64-38.4-115.2 0-44.8 12.8-83.2 38.4-115.2 25.6-25.6 57.6-44.8 96-44.8 38.4 0 70.4 12.8 96 38.4 25.6 25.6 32 64 32 115.2C627.2 876.8 614.4 908.8 595.2 940.8zM960 659.2c-25.6-19.2-57.6-32-96-32l-108.8 0 0 384 51.2 0 0-147.2 51.2 0c38.4 0 76.8-12.8 102.4-32 25.6-25.6 38.4-51.2 38.4-89.6C998.4 710.4 985.6 678.4 960 659.2zM921.6 806.4c-12.8 12.8-38.4 19.2-70.4 19.2l-44.8 0 0-153.6 51.2 0c57.6 0 89.6 25.6 89.6 76.8C947.2 774.4 934.4 793.6 921.6 806.4z" />
+                    </svg>
 			    </a>
             </div>
     </body>
