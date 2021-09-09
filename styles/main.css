@@ -692,14 +692,15 @@ hr {
   color: var(--content-first);
   background: linear-gradient(180deg, transparent 75%, rgba(116, 192, 252, 0.4) 0);
 }
-.title {
-  padding: var(--padding-card);
-  font-size: 1.5em;
+/*.title {
+    padding: var(--padding-card);
+    font-size: 1.5em
 }
+
 .content {
-  margin: var(--margin-t);
-  padding: var(--padding-card);
-}
+    margin: var(--margin-t);
+    padding: var(--padding-card)
+}*/
 .about {
   display: -ms-flexbox;
   display: flex;
