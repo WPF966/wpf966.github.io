@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Title -->
-<title>标签 - wpf博客</title>
+<title>wpf博客</title>
 
 <!-- Icon -->
 <link rel="icon" href="/images/htmlimg/one.JPG">
@@ -87,18 +87,57 @@
     }	
 </script>
                 <main>
-<div class="tags-container">
-    
-        <a class="tag" href="/tags/c/">#c++</a>
-    
-        <a class="tag" href="/tags/Linux/">#Linux</a>
-    
-        <a class="tag" href="/tags/VSCode/">#VSCode</a>
-    
-        <a class="tag" href="/tags/%E7%90%86%E8%AE%BA/">#理论</a>
-    
+<style>
+.tag-info {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: var(--padding-card);
+    margin: var(--margin-y)
+}
+
+.tag-info .tag-name {
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 1.5em
+}
+
+.tag-info .tag-count {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+    -ms-flex-item-align: end;
+    align-self: flex-end
+}
+</style>
+<div class="tag-info card flex">
+	    <div class="tag-name">标签：理论</div>
+		<div class="tag-count">1篇文章</div>		
 </div>
-</main>
+<div class="post-list flex">
+	
+        <div class="post-list-item card flex">
+            <div class="post-left">
+                <a href="/2021/09/09/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%92%8C%E7%AE%A1%E7%90%86/" class="post-title">软件工程-质量保证和管理</a>
+                <div class="post-excerpt">
+                    <p></p>
+                </div>
+                <div class="post-info">
+                    <span>
+                        <time class="post-time">
+                            2021-09-09 ·
+                        </time>
+                        
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="post-category">
+							    软件工程
+							</a>
+                        
+                    </span>
+				    <a class="post-read" href="/2021/09/09/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E5%92%8C%E7%AE%A1%E7%90%86/">阅读内容</a>
+                </div>
+            </div>
+	    </div>
+    
+</div></main>
                 <footer class="footer">
     <div>
 	    因为菜，所以更要学习。
