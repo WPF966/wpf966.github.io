@@ -22,14 +22,12 @@
 <link rel="stylesheet" href="/styles/main.css">
 
 
-<link rel="stylesheet" href="/styles/vs2015.min.css">
-
-
 
 <!--js-->
 <script src="/scripts/darkTheme.js"></script>
 <script src="/scripts/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
         <div class="container">
@@ -158,7 +156,7 @@
 <h4 id="1-2-1-函数模板语法"><a href="#1-2-1-函数模板语法" class="headerlink" title="1.2.1 函数模板语法"></a>1.2.1 函数模板语法</h4><p>函数模板作用：</p>
 <p>建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个<strong>虚拟的类型</strong>来代表。</p>
 <p><strong>语法：</strong> </p>
-<pre><code class="C++">template&lt;typename T&gt;
+<pre><code class="cpp">template&lt;typename T&gt;
 函数声明或定义
 </code></pre>
 <p><strong>解释：</strong></p>
@@ -166,7 +164,7 @@
 <p>typename  — 表面其后面的符号是一种数据类型，可以用class代替</p>
 <p>T    —   通用的数据类型，名称可以替换，通常为大写字母</p>
 <p><strong>示例：</strong></p>
-<pre><code class="C++">
+<pre><code class="cpp">
 //交换整型函数
 void swapInt(int&amp; a, int&amp; b) &#123;
     int temp = a;
@@ -232,7 +230,7 @@ int main() &#123;
 <li>模板必须要确定出T的数据类型，才可以使用</li>
 </ul>
 <p><strong>示例：</strong></p>
-<pre><code class="C++">//利用模板提供通用的交换函数
+<pre><code class="cpp">//利用模板提供通用的交换函数
 template&lt;class T&gt;
 void mySwap(T&amp; a, T&amp; b)
 &#123;

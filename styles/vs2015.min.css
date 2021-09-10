@@ -1,4 +1,8 @@
-pre code.hljs{display:block;overflow-x:auto;padding:1em}
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
 code.hljs{padding:3px 5px}
 .hljs{background:#1e1e1e;color:#dcdcdc}
 .hljs-keyword,.hljs-literal,.hljs-name,.hljs-symbol{color:#569cd6}

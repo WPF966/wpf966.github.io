@@ -305,6 +305,9 @@ hr {
   flex-shrink: 0;
   color: var(--content-first);
 }
+.nav-item a:hover {
+  color: cornflowerblue;
+}
 .navbar-collapse {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;

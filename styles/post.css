@@ -120,6 +120,7 @@
   max-width: 100%;
   border-radius: calc(var(--border-radius)/2);
   margin: 1.25rem auto;
+  background-color: #fff;
 }
 .dark .content img {
   -webkit-filter: brightness(0.75) contrast(1.25);
@@ -370,6 +371,7 @@
 }
 .post-toc.active {
   display: block;
+  opacity: 0.92;
 }
 .post-toc .toc-label {
   font-weight: 700;
@@ -536,8 +538,8 @@ pre > code {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #383a42;
-  background: #eee;
+  color: #dcdcdc;
+  background: #1e1e1e;
 }
 pre > code .comment,
 pre > code .quote {
@@ -607,7 +609,7 @@ pre > code::-webkit-scrollbar-thumb {
 }
 pre > code::-webkit-scrollbar-corner,
 pre > code::-webkit-scrollbar-track-piece {
-  background: #eee !important;
+  background: #1e1e1e !important;
 }
 img[data-action=zoom] {
   cursor: zoom-in;

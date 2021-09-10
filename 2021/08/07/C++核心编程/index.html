@@ -22,14 +22,12 @@
 <link rel="stylesheet" href="/styles/main.css">
 
 
-<link rel="stylesheet" href="/styles/vs2015.min.css">
-
-
 
 <!--js-->
 <script src="/scripts/darkTheme.js"></script>
 <script src="/scripts/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
         <div class="container">
@@ -143,7 +141,7 @@
 <p>​        全局区还包含了常量区, 字符串常量和其他常量也存放在此.</p>
 <p>​        ==该区域的数据在程序结束后由操作系统释放==.</p>
 <p><strong>示例：</strong></p>
-<pre><code class="c++">//全局变量
+<pre><code class="cpp">//全局变量
 int g_a = 10;
 int g_b = 10;
 
@@ -203,7 +201,7 @@ int main() &#123;
 <p>​        由编译器自动分配释放, 存放函数的参数值,局部变量等</p>
 <p>​        注意事项：不要返回局部变量的地址，栈区开辟的数据由编译器自动释放</p>
 <p><strong>示例：</strong></p>
-<pre><code class="c++">int * func()
+<pre><code class="cpp">int * func()
 &#123;
     int a = 10;
     return &amp;a;
@@ -225,7 +223,7 @@ int main() &#123;
 <p>​        由程序员分配释放,若程序员不释放,程序结束时由操作系统回收</p>
 <p>​        在C++中主要利用new在堆区开辟内存</p>
 <p><strong>示例：</strong></p>
-<pre><code class="c++">int* func()
+<pre><code class="cpp">int* func()
 &#123;
     int* a = new int(10);
     return a;
@@ -251,7 +249,7 @@ int main() &#123;
 <p>​    语法：<code> new 数据类型</code></p>
 <p>​    利用new创建的数据，会返回该数据对应的类型的指针</p>
 <p><strong>示例1： 基本语法</strong></p>
-<pre><code class="c++">int* func()
+<pre><code class="cpp">int* func()
 &#123;
     int* a = new int(10);
     return a;
