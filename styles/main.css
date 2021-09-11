@@ -152,6 +152,16 @@ hr {
 .dot::after {
   content: " | ";
 }
+.card-shadow {
+  border-radius: var(--border-radius);
+  background: var(--theme-second);
+  box-shadow: var(--shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 0.1);
+}
+.card-shadow:hover {
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s;
+}
 .card {
   border-radius: var(--border-radius);
   background: var(--theme-second);
@@ -384,10 +394,10 @@ hr {
   background-color: var(--fab);
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem;
+  padding: 0.8rem;
   box-shadow: 0 0.3rem 0.5rem rgba(48, 55, 66, 0.15);
   border: none;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   line-height: 1;
   color: var(--content-first);
 }
@@ -534,6 +544,10 @@ hr {
 }
 .post-category:hover {
   color: var(--accent-first);
+}
+.post-flag {
+  margin: 0 0.2rem;
+  color: coral;
 }
 .categories-list {
   display: -ms-flexbox;
