@@ -28,6 +28,7 @@
 <script src="/scripts/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script>
+<!--百度统计-->
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -36,6 +37,7 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <meta name="generator" content="Hexo 5.4.0"></head>
     <body>
@@ -44,7 +46,7 @@ var _hmt = _hmt || [];
 <header class="navbar navbar-expand-lg">
     
 	<a class="navbar-brand" href="/">
-        <img class="site-logo" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head1.JPG" alt="头像">
+
         <div class="site-name">wpf博客</div>
 	</a>
     <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
@@ -108,6 +110,7 @@ var _hmt = _hmt || [];
 
 <link rel="stylesheet" href="/styles/post.css">
 
+
 <div class="about card-shadow">
     <img class="author-avatar circle" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head2.png" alt="头像">
     <div class="author">
@@ -158,7 +161,59 @@ var _hmt = _hmt || [];
 <li>适应手机显示</li>
 </ol>
 
-</div></main>
+</div>
+
+<div class="webinfo-card card">
+    <div class="webinfo-headline">网站统计</div>
+	<div class=webinfo>
+	    <div class="webinfo-item">
+		    <div class="webinfo-item-name">已运行时间：</div>
+			<div class="webinfo-item-count" id="sitetime"></div>
+		</div>
+		<div class="webinfo-item">
+		    <div class="webinfo-item-name">本站访客数：</div>
+			<div class="webinfo-item-count" id="busuanzi_value_site_uv"></div>
+		</div>
+		<div class="webinfo-item">
+		    <div class="webinfo-item-name">本站总访问量：</div>
+			<div class="webinfo-item-count" id="busuanzi_value_site_pv"></div>
+		</div>
+		<div class="webinfo-item">
+		    <div class="webinfo-item-name">本站总字数：</div>
+			<div class="webinfo-item-count">64.5k</div>
+		</div>
+	</div>
+
+</div>
+
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+
+		var t1 = Date.UTC(2021,4,16,10,30,10); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=/*"已运行"+diffYears+" 年 "+*/diffDays+" 天 "/*+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒"*/;
+	}
+	siteTime();
+</script></main>
                 <footer class="footer">
     <div>
 	    个人学习知识库
@@ -170,6 +225,7 @@ var _hmt = _hmt || [];
 		<a href="https://hexo.io" target="_blank">Hexo</a>
 	</div>
 </footer>
+
 			<div class="fab">
 			    				
 				<a aria-label="深色模式" class="fab-btn" id="dark-mode-toggle-button" href="javascript:applyCustomDarkModeSettings(toggleCustomDarkMode())" title="深色模式">
