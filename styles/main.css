@@ -806,13 +806,24 @@ hr {
   position: relative;
   overflow: hidden;
   margin-top: 1rem;
-  padding: 1rem 1.2rem;
+  padding: 1rem 22rem;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 736px) {
+  .webinfo-card {
+    padding: 1rem 1.2rem;
+  }
 }
 .webinfo-card .webinfo-headline {
   padding-bottom: 0.3rem;
   font-size: 1.2em;
+  text-align: center;
+}
+@media (max-width: 736px) {
+  .webinfo-card .webinfo-headline {
+    text-align: left;
+  }
 }
 .webinfo-card .webinfo .webinfo-item {
   display: -webkit-box;
