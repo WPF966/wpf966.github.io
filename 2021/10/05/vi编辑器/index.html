@@ -1,0 +1,546 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>vi编辑器 | wpf博客</title><meta name="keywords" content="Linux,vim"><meta name="author" content="吴叔叔的鱼"><meta name="copyright" content="吴叔叔的鱼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="vi编辑器概述vi编辑器是Linux和UNIX上基本的文本编辑器，工作在字符模式下。由于不需要图形界面，因此vi是效率很高的文本编辑器。尽管在Linux上也有很多图形界面的编辑器可用，但vi在没有图形界面的系统中（比如嵌入式系统、服务器系统）的功能是那些图形编辑器所无法比拟的，一句话，当没有图形界面时，vi就是编辑器“一哥”，而且Linux重要的应用场合就是嵌入式系统或服务器系统。 vi编辑器是所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vi编辑器">
+<meta property="og:url" content="http://example.com/2021/10/05/vi%E7%BC%96%E8%BE%91%E5%99%A8/index.html">
+<meta property="og:site_name" content="wpf博客">
+<meta property="og:description" content="vi编辑器概述vi编辑器是Linux和UNIX上基本的文本编辑器，工作在字符模式下。由于不需要图形界面，因此vi是效率很高的文本编辑器。尽管在Linux上也有很多图形界面的编辑器可用，但vi在没有图形界面的系统中（比如嵌入式系统、服务器系统）的功能是那些图形编辑器所无法比拟的，一句话，当没有图形界面时，vi就是编辑器“一哥”，而且Linux重要的应用场合就是嵌入式系统或服务器系统。 vi编辑器是所">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/WPF966/image-blog/raw/master/image/blog-page-img/2021/9-22/viimg.jpeg">
+<meta property="article:published_time" content="2021-10-05T14:42:39.000Z">
+<meta property="article:modified_time" content="2021-10-19T12:20:07.024Z">
+<meta property="article:author" content="吴叔叔的鱼">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/WPF966/image-blog/raw/master/image/blog-page-img/2021/9-22/viimg.jpeg"><link rel="shortcut icon" href="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head2.png"><link rel="canonical" href="http://example.com/2021/10/05/vi%E7%BC%96%E8%BE%91%E5%99%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fad6b244b0a614f32dc54fe20c49cfbe";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vi编辑器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-19 20:20:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head1.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-file"></i><span> 教程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/course/opencv/"><i class="fa-fw fas fa-file-text"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/course/c++/"><i class="fa-fw fas fa-file-text"></i><span> C++</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">wpf博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-file"></i><span> 教程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/course/opencv/"><i class="fa-fw fas fa-file-text"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/course/c++/"><i class="fa-fw fas fa-file-text"></i><span> C++</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">vi编辑器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-05T14:42:39.000Z" title="发表于 2021-10-05 22:42:39">2021-10-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-19T12:20:07.024Z" title="更新于 2021-10-19 20:20:07">2021-10-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vi编辑器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="vi编辑器概述"><a href="#vi编辑器概述" class="headerlink" title="vi编辑器概述"></a>vi编辑器概述</h2><p>vi编辑器是Linux和UNIX上基本的文本编辑器，工作在字符模式下。由于不需要图形界面，因此vi是效率很高的文本编辑器。尽管在Linux上也有很多图形界面的编辑器可用，但vi在没有图形界面的系统中（比如嵌入式系统、服务器系统）的功能是那些图形编辑器所无法比拟的，一句话，当没有图形界面时，vi就是编辑器“一哥”，而且Linux重要的应用场合就是嵌入式系统或服务器系统。</p>
+<p>vi编辑器是所有Linux系统的标准编辑器，用于编辑任何ASCII文本，对于编辑源程序尤其有用。它的功能非常强大，通过使用vi编辑器可以对文本进行创建、查找、替换、删除、复制和粘贴等操作。</p>
+<h2 id="vi编辑器基本操作"><a href="#vi编辑器基本操作" class="headerlink" title="vi编辑器基本操作"></a>vi编辑器基本操作</h2><p>(1) 进入vi编辑器</p>
+<p>在系统shell提示符下输入vi 及文件名称后， 即可进入vi编辑界面。 如果系统内还不存在该文件， 就意味着要创建文件； 如果系统内存在该文件， 就意味着要编辑该文件。 下面介绍用w编辑器创建文件的示例。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim test</span><br><span class="line">~</span><br></pre></td></tr></table></figure>
+
+<p>进入文件之后， 系统处于命令行模式， 要切换到插入模式才能够输入文字。</p>
+<p>(2) 切换至插入模式</p>
+<p>在命令行模式下按字母键“ i ”就可以进入插入模式， 这时就可以开始输入文字了。</p>
+<p>(3) 从插入模式切换到命令行模式</p>
+<p>直接按<code>Esc</code>键可从插入模式切换到命令行模式</p>
+<p>(4) 退出vi及保存文件</p>
+<p>在命令行模式下， 按冒号键<code>“:”</code>可以进入末行模式， 例如<code>:w filename</code>将文件内容以指定的文件名filename保存。<br>输入 <code>&quot;:wq&quot;</code>, 存盘并退出vi。 输入 <code>&quot;:q!&quot;</code>, 不存盘强制退出vi。</p>
+<h2 id="vi编辑器工作模式"><a href="#vi编辑器工作模式" class="headerlink" title="vi编辑器工作模式"></a>vi编辑器工作模式</h2><p>vi编辑器有三种基本工作模式，分别是命令（行）模式、插入模式和末行模式。在使用时，一般将末行模式也算入命令行模式，各模式的功能区分为如下。</p>
+<p>(1) 命令行模式</p>
+<p>控制屏幕光标的移动，字符、字或行的删除、移动、复制某区域及进入插入模式，或者到末行模式。</p>
+<p>(2) 插入模式</p>
+<p>只有在插入模式下才可以做文本输入，按Esc键可回到命令行模式。</p>
+<p>(3) 末行模式</p>
+<p>将文件保存或退出vi边境，也可以设置编辑环境，如寻找字符串、列出行号等。在命令行模式下按“：” 即可进入末行模式</p>
+<p>以下图片展示vi编辑器3种模式之间的关系：</p>
+<p><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-page-img/2021/9-22/vimod.png" alt="vi编辑器关系图"></p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>进入插入模式</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">在光标所在字符后插入</td>
+</tr>
+<tr>
+<td align="left">A</td>
+<td align="left">在光标所在行的末尾插入</td>
+</tr>
+<tr>
+<td align="left">i</td>
+<td align="left">在光标所在字符前插入</td>
+</tr>
+<tr>
+<td align="left">I</td>
+<td align="left">在光标所在行的行首插入</td>
+</tr>
+<tr>
+<td align="left">o</td>
+<td align="left">在光标所在行的下面插入新行</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">在光标所在行的上面插入新行</td>
+</tr>
+<tr>
+<td align="left">s</td>
+<td align="left">删除光标后的一个字符，进入插入模式</td>
+</tr>
+<tr>
+<td align="left">S</td>
+<td align="left">删除光标所在行，进入插入模式</td>
+</tr>
+<tr>
+<td align="left"><strong>移动光标</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">h</td>
+<td align="left">光标向左移动一个字符</td>
+</tr>
+<tr>
+<td align="left">j</td>
+<td align="left">光标向下移动一行</td>
+</tr>
+<tr>
+<td align="left">k</td>
+<td align="left">光标向上移动一行</td>
+</tr>
+<tr>
+<td align="left">l</td>
+<td align="left">光标向右移动一个字符</td>
+</tr>
+<tr>
+<td align="left">Ctrl+b</td>
+<td align="left">屏幕往后移动一页</td>
+</tr>
+<tr>
+<td align="left">Ctrl+f</td>
+<td align="left">屏幕往前移动一页</td>
+</tr>
+<tr>
+<td align="left">Ctrl+u</td>
+<td align="left">屏幕往后移动半页</td>
+</tr>
+<tr>
+<td align="left">Ctrl+d</td>
+<td align="left">屏幕往前移动半页</td>
+</tr>
+<tr>
+<td align="left">gg</td>
+<td align="left">移动到文件的开头（常用）</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">移动到文件的末尾（常用）</td>
+</tr>
+<tr>
+<td align="left">nG</td>
+<td align="left">n为数字。移动到这个文件的第n行。例如20G则会移动到这个文件的第20行（可配合:set nu显示行）</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">数字0,移动到当前行的行首（常用）</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">移动到当前行的行尾（常用）</td>
+</tr>
+<tr>
+<td align="left">H</td>
+<td align="left">光标移动到这个屏幕的最上方那一行</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">光标移动到这个屏幕的中央那一行</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">光标移动到这个屏幕的最下方那一行</td>
+</tr>
+<tr>
+<td align="left">n<Enter></td>
+<td align="left">n为数字。光标下一行开始向下移动n行（常用）</td>
+</tr>
+<tr>
+<td align="left"><strong>搜索与替换</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">/str</td>
+<td align="left">从光标开始向下搜索指定字符串，搜索时忽略大小写:set ic（常用）</td>
+</tr>
+<tr>
+<td align="left">?str</td>
+<td align="left">从光标开始向上搜索指定字符串。</td>
+</tr>
+<tr>
+<td align="left">n</td>
+<td align="left">重复前一个搜素字符串的动作</td>
+</tr>
+<tr>
+<td align="left">:%s/str/Nstr/g</td>
+<td align="left">全局替换指定字符串（常用）</td>
+</tr>
+<tr>
+<td align="left">:n1,n2s/str/Nstr/g</td>
+<td align="left">n1,n2为数字，在指定行内替换指定字符串（常用）</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">替换光标所在处的字符</td>
+</tr>
+<tr>
+<td align="left">R</td>
+<td align="left">从光标所在处开始替换字符，按Esc结束</td>
+</tr>
+<tr>
+<td align="left"><strong>删除、复制、粘贴</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left">删除光标所在处字符</td>
+</tr>
+<tr>
+<td align="left">nx</td>
+<td align="left">删除光标所在处n个字符</td>
+</tr>
+<tr>
+<td align="left">J</td>
+<td align="left">将光标所在行与下一列的数据结合成同一行</td>
+</tr>
+<tr>
+<td align="left">dd</td>
+<td align="left">剪切光标所在行，可当做删除使用</td>
+</tr>
+<tr>
+<td align="left">ndd</td>
+<td align="left">n为数字，剪切光标所在处n行</td>
+</tr>
+<tr>
+<td align="left">dG</td>
+<td align="left">剪切光标所在行到文件末尾内容</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">剪切光标所在处到行尾内容（内容全部剪切后会保留空白行）</td>
+</tr>
+<tr>
+<td align="left">:n1,n2d</td>
+<td align="left">剪切指定范围内的内容</td>
+</tr>
+<tr>
+<td align="left">yy</td>
+<td align="left">复制当前行</td>
+</tr>
+<tr>
+<td align="left">nyy</td>
+<td align="left">复制从当前行到以下n行</td>
+</tr>
+<tr>
+<td align="left">p/P</td>
+<td align="left">将复制、剪切的内容粘贴到当前光标所在行下或行上（常用）</td>
+</tr>
+<tr>
+<td align="left"><strong>撤销、重复</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td align="left">复原前一个动作（常用）</td>
+</tr>
+<tr>
+<td align="left">Ctrl+r</td>
+<td align="left">重做上一个操作（常用）</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">小数点，重复前一个动作，可用于重复删除、粘贴。（常用）</td>
+</tr>
+</tbody></table>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>插入模式用来向文本中添加、删除或修改文本内容，也就是通常的编辑工作，可以想象在使用word文本的感觉，但缺少其中的快捷键操作，只能做简单的键操作，如果要退出，需要按Esc键返回命令行模式，再通过<code>:wq</code>保存退出。</p>
+<h3 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h3><p>末行模式是在命令行模式下操作的，在使用末行模式之间，要确保在命令行模式下，在按冒号<code>“:”</code>进入末行模式。</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>保存、退出</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>:w</td>
+<td>保存编写的文件（常用）</td>
+</tr>
+<tr>
+<td>:w!</td>
+<td>若文件属性为“只读”，则强制写入该文件，能不能写入与权限有关。</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出文件（未修改文件时）（常用）</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制退出文件并不保存文件</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>存储后离开，若为:wq!，则为强制存储后离开（常用）</td>
+</tr>
+<tr>
+<td>:e!</td>
+<td>将文件还原到最原始的状态</td>
+</tr>
+<tr>
+<td>ZZ</td>
+<td>若文件没有修改，则不存储离开；若文件已经修改，则存储后离开</td>
+</tr>
+<tr>
+<td>:w [filename]</td>
+<td>将编辑的文件存储为另一个文件</td>
+</tr>
+<tr>
+<td>:r [filename]</td>
+<td>将filename文件内容加到当前文件光标所在行的后面</td>
+</tr>
+<tr>
+<td>:n1,n2 w [filename]</td>
+<td>将n1到n2的内容存储到filename文件</td>
+</tr>
+<tr>
+<td><strong>行号</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>:set nu</td>
+<td>显示行号，设置后在每一行显示该行的行号</td>
+</tr>
+<tr>
+<td>:set nonu</td>
+<td>取消显示行号</td>
+</tr>
+<tr>
+<td><strong>大小写</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>:set ic</td>
+<td>在搜素是忽略大小写</td>
+</tr>
+<tr>
+<td>:set noic</td>
+<td>取消忽略大小写</td>
+</tr>
+<tr>
+<td><strong>跳转</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>:n</td>
+<td>n为数字，跳转到指定的行</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>vi命令比较多，这里只整理了些会用到的命令，慢慢练习掌握其中常用的命令，对vi编辑器的使用就会得心应手。</p>
+</blockquote>
+<p><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-page-img/2021/9-22/viimg.jpeg" alt="附上vi编辑器键盘图"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/vim/">vim</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/WPF966/image-blog/raw/master/image/blog-page-img/2021/9-22/viimg.jpeg" data-sites="weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/10/07/gdb%E8%B0%83%E8%AF%95%E5%99%A8/"><img class="prev-cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/gdbimg.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">gdb调试器</div></div></a></div><div class="next-post pull-right"><a href="/2021/09/22/Socket%E7%BC%96%E7%A8%8B%E5%8E%9F%E7%90%86/"><img class="next-cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Socket编程原理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/08/11/Linux系统搭建C++环境/" title="Linux系统配置C++环境"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/linuximg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-11</div><div class="title">Linux系统配置C++环境</div></div></a></div><div><a href="/2021/10/07/gdb调试器/" title="gdb调试器"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/gdbimg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-07</div><div class="title">gdb调试器</div></div></a></div><div><a href="/2021/10/08/makefile的使用/" title="makefile的使用"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-08</div><div class="title">makefile的使用</div></div></a></div><div><a href="/2021/10/30/Vim下C-自动补全/" title="Vim实用配置"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-30</div><div class="title">Vim实用配置</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head1.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴叔叔的鱼</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-commenting card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">理想主义的花，最终会盛开在浪漫主义的土壤里，我的热情永远不会熄灭在现实的平凡之中！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-text">vi编辑器概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">vi编辑器基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">vi编辑器工作模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-text">命令行模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-text">插入模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-text">末行模式</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/Vim%E4%B8%8BC-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" title="Vim实用配置"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vim实用配置"/></a><div class="content"><a class="title" href="/2021/10/30/Vim%E4%B8%8BC-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" title="Vim实用配置">Vim实用配置</a><time datetime="2021-10-30T07:32:22.000Z" title="发表于 2021-10-30 15:32:22">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/CentOS7%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86/" title="CentOS7默认使用root登陆"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CentOS7默认使用root登陆"/></a><div class="content"><a class="title" href="/2021/10/30/CentOS7%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86/" title="CentOS7默认使用root登陆">CentOS7默认使用root登陆</a><time datetime="2021-10-30T07:01:36.000Z" title="发表于 2021-10-30 15:01:36">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/27/Linux%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Linux下安装MySQL数据库"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux下安装MySQL数据库"/></a><div class="content"><a class="title" href="/2021/10/27/Linux%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Linux下安装MySQL数据库">Linux下安装MySQL数据库</a><time datetime="2021-10-27T07:44:19.000Z" title="发表于 2021-10-27 15:44:19">2021-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="C++多线程编程"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++多线程编程"/></a><div class="content"><a class="title" href="/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="C++多线程编程">C++多线程编程</a><time datetime="2021-10-20T12:44:20.000Z" title="发表于 2021-10-20 20:44:20">2021-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/08/makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="makefile的使用"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="makefile的使用"/></a><div class="content"><a class="title" href="/2021/10/08/makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="makefile的使用">makefile的使用</a><time datetime="2021-10-08T05:26:25.000Z" title="发表于 2021-10-08 13:26:25">2021-10-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴叔叔的鱼</div><div class="framework-info"><span>power by </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a></div><div class="footer_custom_text">欢迎来到我的博客</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

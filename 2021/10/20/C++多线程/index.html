@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C++多线程编程 | wpf博客</title><meta name="keywords" content="c++"><meta name="author" content="吴叔叔的鱼"><meta name="copyright" content="吴叔叔的鱼"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在c++98的时代，c++标准中没有包含多线程的支持，只能调用操作系统的SDk API来编写多线程程序，在c++11标准中才正式加入了多线程。 线程基本概念进程：是一个具有独立功能的程序关于某个数据集合的一次运行活动。是操作系统动态执行的基本单元。简单点说就是一个正在运行的软件就是一个进程。 线程：是包含在进程之中，是进程中的实际运作单位。一个进程中可以并发多个线程，每条线程并行执行不同的任务。是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++多线程编程">
+<meta property="og:url" content="http://example.com/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:site_name" content="wpf博客">
+<meta property="og:description" content="在c++98的时代，c++标准中没有包含多线程的支持，只能调用操作系统的SDk API来编写多线程程序，在c++11标准中才正式加入了多线程。 线程基本概念进程：是一个具有独立功能的程序关于某个数据集合的一次运行活动。是操作系统动态执行的基本单元。简单点说就是一个正在运行的软件就是一个进程。 线程：是包含在进程之中，是进程中的实际运作单位。一个进程中可以并发多个线程，每条线程并行执行不同的任务。是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg">
+<meta property="article:published_time" content="2021-10-20T12:44:20.000Z">
+<meta property="article:modified_time" content="2021-10-22T13:45:27.587Z">
+<meta property="article:author" content="吴叔叔的鱼">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg"><link rel="shortcut icon" href="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head2.png"><link rel="canonical" href="http://example.com/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?fad6b244b0a614f32dc54fe20c49cfbe";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C++多线程编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-22 21:45:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head1.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-file"></i><span> 教程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/course/opencv/"><i class="fa-fw fas fa-file-text"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/course/c++/"><i class="fa-fw fas fa-file-text"></i><span> C++</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">wpf博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-file"></i><span> 教程</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/course/opencv/"><i class="fa-fw fas fa-file-text"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/course/c++/"><i class="fa-fw fas fa-file-text"></i><span> C++</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">C++多线程编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-20T12:44:20.000Z" title="发表于 2021-10-20 20:44:20">2021-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-22T13:45:27.587Z" title="更新于 2021-10-22 21:45:27">2021-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">基础学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C++多线程编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><p>在c++98的时代，c++标准中没有包含多线程的支持，只能调用操作系统的SDk API来编写多线程程序，在c++11标准中才正式加入了多线程。</p>
+<h2 id="线程基本概念"><a href="#线程基本概念" class="headerlink" title="线程基本概念"></a>线程基本概念</h2><p><strong>进程：</strong>是一个具有独立功能的程序关于某个数据集合的一次运行活动。是操作系统动态执行的基本单元。简单点说就是一个正在运行的软件就是一个进程。</p>
+<p><strong>线程：</strong>是包含在进程之中，是进程中的实际运作单位。一个进程中可以并发多个线程，每条线程并行执行不同的任务。是操作系统能够进行运算调度的最小单元。</p>
+<h2 id="c-多线程开发方式"><a href="#c-多线程开发方式" class="headerlink" title="c++多线程开发方式"></a>c++多线程开发方式</h2><p>在linuxC++开发环境中，有两种方式来开发多线程程序，一种是利用POSIX多线程API函数，另一种是利用c++11标准中的多线程函数来开发。</p>
+<h2 id="POSIX多线程API函数"><a href="#POSIX多线程API函数" class="headerlink" title="POSIX多线程API函数"></a>POSIX多线程API函数</h2><p>使用posix函数需要包含头文件<code>pthread.h</code>，并在编译的时候加上库pthread（<code>g++ -o test test.cpp -lpthread</code>），表示包含多线程文件。</p>
+<table>
+<thead>
+<tr>
+<th>API函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pthread_create</td>
+<td>创建线程</td>
+</tr>
+<tr>
+<td>pthread_join</td>
+<td>等待一个线程的结束（可连接的线程）</td>
+</tr>
+<tr>
+<td>pthread_self</td>
+<td>获取线程ID</td>
+</tr>
+<tr>
+<td>pthread_cancel</td>
+<td>取消另一个线程</td>
+</tr>
+<tr>
+<td>pthread_exit</td>
+<td>在线程函数中调用来退出线程函数（分离的线程）</td>
+</tr>
+<tr>
+<td>pthread_kill</td>
+<td>向线程发送一个信号</td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pthread_create</span>(</span><br><span class="line">    <span class="keyword">pthread_t</span> *pid,                 <span class="comment">//创建成功后的线程ID地址</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">pthread_attr_t</span> *attr,     <span class="comment">//不使用NULL时，</span></span><br><span class="line">    <span class="keyword">void</span>*(*start_routine)(<span class="keyword">void</span> *),  <span class="comment">//创建成功后的执行函数地址</span></span><br><span class="line">    <span class="keyword">void</span> *arg                       <span class="comment">//指向传给线程函数的参数</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pthread_join</span>(</span><br><span class="line">    <span class="keyword">pthread_t</span> thread,    <span class="comment">//线程ID</span></span><br><span class="line">    <span class="keyword">void</span> **retvall       <span class="comment">//</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><h3 id="线程的属性"><a href="#线程的属性" class="headerlink" title="线程的属性"></a>线程的属性</h3><p><strong>可连接线程和可分离线程最重要的区别：</strong>在任何一个时间点上，线程是可连接的（joinable）,或者是分离的（detached）。一个可连接的线程在自己退出时或pthread_exit时都不会释放线程所占用堆栈和线程描述符（总计八千多字节），需要通过其他线程调用pthread_join之后，这些资源才会被释放；相反，一个分离的线程是不能被其他线程回收或杀死的，它所占用的资源在终止时由系统自动释放。</p>
+<h2 id="c-11中的线程类"><a href="#c-11中的线程类" class="headerlink" title="c++11中的线程类"></a>c++11中的线程类</h2><p>c++11中使用线程需要引入5个头文件来支持多线程编程，分别是atomic、thread、mutex、condition_variable和future。</p>
+<p>thread：该头文件主要声明了std::thread类，另外std::this_thread命令空间也在该头文件中。</p>
+<table>
+<thead>
+<tr>
+<th>成员函数</th>
+<th>说明（public访问方式）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>thread</td>
+<td>构造函数，有4种</td>
+</tr>
+<tr>
+<td>get_id</td>
+<td>获得线程ID</td>
+</tr>
+<tr>
+<td>joinable</td>
+<td>判断线程对象是否可连接</td>
+</tr>
+<tr>
+<td>join</td>
+<td>阻塞函数，等待线程结束</td>
+</tr>
+<tr>
+<td>native_handle</td>
+<td>用于获得与操作系统相关的原生线程句柄（需要本地库支持）</td>
+</tr>
+<tr>
+<td>swap</td>
+<td>线程交换</td>
+</tr>
+<tr>
+<td>detach</td>
+<td>分离线程</td>
+</tr>
+</tbody></table>
+<p>线程的创建</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c++</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" data-sites="weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/10/27/Linux%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"><img class="prev-cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux下安装MySQL数据库</div></div></a></div><div class="next-post pull-right"><a href="/2021/10/08/makefile%E7%9A%84%E4%BD%BF%E7%94%A8/"><img class="next-cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">makefile的使用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/08/11/Linux系统搭建C++环境/" title="Linux系统配置C++环境"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/linuximg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-11</div><div class="title">Linux系统配置C++环境</div></div></a></div><div><a href="/2021/10/30/Vim下C-自动补全/" title="Vim实用配置"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-30</div><div class="title">Vim实用配置</div></div></a></div><div><a href="/2021/06/10/openCV图像处理/" title="openCV图像处理（持续更新~）"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/opencvimg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-06-10</div><div class="title">openCV图像处理（持续更新~）</div></div></a></div><div><a href="/2021/08/25/vscode配置C++环境/" title="VSCode搭建C++环境"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/vsimg.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-25</div><div class="title">VSCode搭建C++环境</div></div></a></div><div><a href="/2021/09/22/Socket编程原理/" title="Socket编程原理"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-22</div><div class="title">Socket编程原理</div></div></a></div><div><a href="/2021/07/30/C++基础入门/" title="C++基础入门"><img class="cover" src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/cimg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-30</div><div class="title">C++基础入门</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-img/head1.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">吴叔叔的鱼</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-commenting card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">理想主义的花，最终会盛开在浪漫主义的土壤里，我的热情永远不会熄灭在现实的平凡之中！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">线程基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%80%E5%8F%91%E6%96%B9%E5%BC%8F"><span class="toc-text">c++多线程开发方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POSIX%E5%A4%9A%E7%BA%BF%E7%A8%8BAPI%E5%87%BD%E6%95%B0"><span class="toc-text">POSIX多线程API函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B"><span class="toc-text">创建线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">线程的属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#c-11%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%A8%8B%E7%B1%BB"><span class="toc-text">c++11中的线程类</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/Vim%E4%B8%8BC-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" title="Vim实用配置"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vim实用配置"/></a><div class="content"><a class="title" href="/2021/10/30/Vim%E4%B8%8BC-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" title="Vim实用配置">Vim实用配置</a><time datetime="2021-10-30T07:32:22.000Z" title="发表于 2021-10-30 15:32:22">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/30/CentOS7%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86/" title="CentOS7默认使用root登陆"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CentOS7默认使用root登陆"/></a><div class="content"><a class="title" href="/2021/10/30/CentOS7%E9%BB%98%E8%AE%A4%E4%BD%BF%E7%94%A8root%E7%99%BB%E9%99%86/" title="CentOS7默认使用root登陆">CentOS7默认使用root登陆</a><time datetime="2021-10-30T07:01:36.000Z" title="发表于 2021-10-30 15:01:36">2021-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/27/Linux%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Linux下安装MySQL数据库"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux下安装MySQL数据库"/></a><div class="content"><a class="title" href="/2021/10/27/Linux%E4%B8%8B%E5%AE%89%E8%A3%85MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Linux下安装MySQL数据库">Linux下安装MySQL数据库</a><time datetime="2021-10-27T07:44:19.000Z" title="发表于 2021-10-27 15:44:19">2021-10-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="C++多线程编程"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++多线程编程"/></a><div class="content"><a class="title" href="/2021/10/20/C++%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="C++多线程编程">C++多线程编程</a><time datetime="2021-10-20T12:44:20.000Z" title="发表于 2021-10-20 20:44:20">2021-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/08/makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="makefile的使用"><img src="https://gitee.com/WPF966/image-blog/raw/master/image/blog-cover/default_img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="makefile的使用"/></a><div class="content"><a class="title" href="/2021/10/08/makefile%E7%9A%84%E4%BD%BF%E7%94%A8/" title="makefile的使用">makefile的使用</a><time datetime="2021-10-08T05:26:25.000Z" title="发表于 2021-10-08 13:26:25">2021-10-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 吴叔叔的鱼</div><div class="framework-info"><span>power by </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a></div><div class="footer_custom_text">欢迎来到我的博客</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
